@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS reports (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  player_id INT NOT NULL,
+  message TEXT NOT NULL,
+  status ENUM('OPEN','IN_PROGRESS','CLOSED') DEFAULT 'OPEN',
+  admin VARCHAR(64),
+  response TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NULL,
+  FOREIGN KEY (player_id) REFERENCES players(id)
+);

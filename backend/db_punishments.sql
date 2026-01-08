@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS punishments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  player_id INT NOT NULL,
+  type ENUM('KICK','BAN','JAIL','WARN','NOTE') NOT NULL,
+  reason VARCHAR(255),
+  admin VARCHAR(64) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (player_id) REFERENCES players(id)
+);

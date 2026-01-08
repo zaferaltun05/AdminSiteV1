@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS unauthorized_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  ip VARCHAR(64),
+  user_agent VARCHAR(255),
+  path VARCHAR(255),
+  reason VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,29 @@
+@media (max-width: 900px) {
+  .card {
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+  h2 {
+    font-size: 1.2rem !important;
+  }
+  #stats {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  .card {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}

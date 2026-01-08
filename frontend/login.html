@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Giriş Yapılıyor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Giriş yapılıyor, lütfen bekleyin...</h2>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+    const role = params.get("role");
+
+    if (token) {
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
+
+      // URL temizle
+      window.history.replaceState({}, "", "/");
+
+      // Dashboard'a geç
+      window.location.href = "/";
+    } else {
+      document.body.innerHTML = "<h3>Giriş başarısız</h3>";
+    }
+  </script>
+
+</body>
+</html>
